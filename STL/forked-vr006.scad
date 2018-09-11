@@ -61,10 +61,18 @@ module front_united(){
             translate([-WIDER_BY-2*EXPLODE, 0 ,0])
             front_smaller_part();
         };        
+
+        
+        
         // Front smoothing
         color("green")
         translate([0,-1.72,0])
         cube([120,4,80], true);                    
+        
+        // Back smoothing
+        color("green")
+        translate([0,12,0])
+        cube([120,4,80], true);               
     }    
 }
 
