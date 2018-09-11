@@ -392,8 +392,13 @@ module front_body_base(){
     union(){
         difference(){
             import("FRONT.stl", convexity=3);
-            translate([-40,3.3,-14])
-            cube([10,4,6], true);        
+//            translate([-40,3.3,-14])
+//            cube([10,4,6], true);        
+            
+            // Extra slot for the ribbon
+            color("white")
+            translate([-42,4.8,1])        
+            cube([14,7,26], true);                         
 
             translate([0, 11.6, 0])
             cube([120,3,100], true);        
