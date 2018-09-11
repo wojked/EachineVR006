@@ -119,7 +119,7 @@ module extra_border_rounded_base_side(){
     x_offset = 51 - CORNER_DIAMETER/2;
     z_offset = 32 - CORNER_DIAMETER/2; 
     antenna_limiter = 14.6;    
-    antenna_limiter_z = 7.5;
+    antenna_limiter_z = 9.5;
     
     color("pink")
     hull(){
@@ -397,7 +397,12 @@ module front_body_base(){
 
             translate([0, 11.6, 0])
             cube([120,3,100], true);        
-        }
+            
+            // Thinner antenna slot
+            color("red")
+            translate([43.2,5,-25])
+            cube([14,12,6], true);                            
+        }     
         
         translate([0,5.2,0])
         
