@@ -51,14 +51,20 @@ module back_united(){
 }
 
 module front_united(){
-    union(){
-        front_bigger_part();
-        translate([-EXPLODE, 0 ,0])
-        front_middle_part();
-        translate([-WIDER_BY, 0 ,0])
-        front_middle_part();
-        translate([-WIDER_BY-2*EXPLODE, 0 ,0])
-        front_smaller_part();
+    difference(){
+        union(){
+            front_bigger_part();
+            translate([-EXPLODE, 0 ,0])
+            front_middle_part();
+            translate([-WIDER_BY, 0 ,0])
+            front_middle_part();
+            translate([-WIDER_BY-2*EXPLODE, 0 ,0])
+            front_smaller_part();
+        };        
+        // Front smoothing
+        color("green")
+        translate([0,-1.72,0])
+        cube([120,4,80], true);                    
     }    
 }
 
