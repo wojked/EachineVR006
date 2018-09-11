@@ -413,7 +413,7 @@ module front_body_base(){
             
             // Thinner antenna slot
             color("red")
-            translate([43.2,5,-25])
+            translate([43.2,5,-25.3])
             cube([14,12,6], true);                            
         }     
         
