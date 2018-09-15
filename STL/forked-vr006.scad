@@ -195,8 +195,8 @@ module extra_border_rounded_empty_inside(thickness){
     difference(){
         extra_border_rounded();     
 
-        translate([-7,0,0])    
-        cube([85,base_height*2,52], true);     
+        translate([-6.5,0,0])    
+        cube([84.5,base_height*2,52], true);     
         
         translate([40,0,2])       
         cube([18,base_height*2,48], true); //53 Z              
