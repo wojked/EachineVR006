@@ -34,9 +34,9 @@ EXPLODE = 0;
 $fn = 128;
 
 
-//back_united();
-translate([0,-16.5,0])
-front_united();
+back_united();
+//translate([0,-16.5,0])
+//front_united();
 
 module back_united(){
     union(){
@@ -205,23 +205,38 @@ module extra_border_rounded_empty_inside(thickness){
 
 module extra_stablisers(){
     thickness = 5 + EXTRA_DEPTH;
+    lower_thickness = 4;
     z_offset = 23.6;
     
     smaller_thickness = 3 + EXTRA_DEPTH;
-    
+
+    color("green")
+    translate([-30,-lower_thickness/2,z_offset+2])
+    cube([10,lower_thickness,2], true); 
     color("violet")
     translate([-30,-thickness/2,z_offset])
-    cube([10,thickness,2], true);
+    cube([10,thickness,2], true); 
      
-    color("violet")
+     
+    color("green")
+    translate([-30,-lower_thickness/2,-z_offset-2])
+    cube([10,lower_thickness,2], true);         
+    color("green")
     translate([-30,-thickness/2,-z_offset])
     cube([10,thickness,2], true);
     
-    color("violet")
+    color("green")
+    translate([26,-lower_thickness/2,-z_offset-2])
+    cube([6,lower_thickness,2], true);      
+    color("green")
     translate([28,-thickness/2,-z_offset])
     cube([10,thickness,2], true);      
     
-    color("violet")
+    
+    color("green")
+    translate([47,-lower_thickness/2,0])
+    cube([4,lower_thickness,10], true);          
+    color("green")
     translate([45,-thickness/2,0])
     cube([2,thickness,10], true);     
     
@@ -257,7 +272,8 @@ module back_body_base(){
             translate([22.5, -1, -19.4])
             rotate([90,0,0])        
             larger_button_slots();            
-        }
+        }        
+       
         extra_stablisers();
     }
 }
@@ -328,7 +344,14 @@ module back_body(){
         
         translate([0,-6.8,0])
         screw_heads();          
-    }    
+        
+        color("white")
+        rotate([180,0,0])
+        translate([0,8,33])                                                                        
+        minijack_slot_outside();           
+        
+    }                                                                    
+            
 //
 //    translate([0,-6.8,0])
 //    screw_heads();            
@@ -387,6 +410,17 @@ module minijack_slot(){
             translate([0,10,0])
             cylinder(10,diameter/2, diameter/2, true);                 
         }
+    }
+}
+
+module minijack_slot_outside(){
+    diameter = 6.5;
+        
+    translate([0,-2.4,0])
+    hull(){
+        cylinder(10,diameter/2, diameter/2, true);     
+        translate([0,10,0])
+        cylinder(10,diameter/2, diameter/2, true);                 
     }
 }
 
