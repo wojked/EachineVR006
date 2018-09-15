@@ -242,7 +242,33 @@ module extra_stablisers(){
     
     color("purple")
     translate([50.5,-smaller_thickness/2,12.3])
-    cube([2,smaller_thickness,8.8], true);         
+    cube([2,smaller_thickness,8.8], true);   
+
+    //Edge
+    color("green")
+    translate([42.5,-lower_thickness/2,-21.5])
+    cube([14,lower_thickness,1], true);    
+    
+    //Edge screw
+    color("red")
+    translate([46.5,-lower_thickness/2,25])
+    cube([8,lower_thickness,2], true);     
+   
+    //Edge screw
+    color("green")
+    translate([32.0,-lower_thickness/2,-25])
+    cube([8,lower_thickness,2], true);      
+       
+    
+    //Edge screw
+    color("green")
+    translate([-46.5,-lower_thickness/2,25])
+    cube([8,lower_thickness,2], true);          
+    
+    //Edge screw
+    color("green")
+    translate([-46.5,-lower_thickness/2,-25])
+    cube([8,lower_thickness,2], true);         
 }
 
 module larger_button(){
