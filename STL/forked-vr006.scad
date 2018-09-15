@@ -34,9 +34,9 @@ EXPLODE = 0;
 $fn = 128;
 
 
-back_united();
+//back_united();
 //translate([0,-16.5,0])
-//front_united();
+front_united();
 
 module back_united(){
     union(){
@@ -465,8 +465,8 @@ module front_body_base(){
             
             // Extra slot for the ribbon
             color("white")
-            translate([-42,4.8,1])        
-            cube([14,7,26], true);                         
+            translate([-42,4.8,2])        
+            cube([13.8,7,28], true);                         
 
             translate([0, 11.6, 0])
             cube([120,3,100], true);        
@@ -496,13 +496,18 @@ module front_body_base(){
             
             translate([0,4.5,-28])                                                    
             minijack_slot();
+            
+            color("white")
+            rotate([180,0,0])
+            translate([0,-10,33])                                                                      
+            minijack_slot_outside();             
 
             translate([-8.5,0.4,-28])                         
             led_slot();         
         
             translate([0,0.4,28])               
             led_slot();       
-        };    
+        };            
     }   
 }
 
